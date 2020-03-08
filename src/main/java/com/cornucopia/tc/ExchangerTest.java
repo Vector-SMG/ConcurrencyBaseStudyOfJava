@@ -7,6 +7,7 @@ import java.util.concurrent.Executors;
 /**
  * 15.Exchanger
  * 15.1 解决不同线程之间的数据交换问题。
+ * 15.2 不同线程间exchange数据，只有当都交换完成，才往下执行。
  * @author cornucopia
  * @version 1.0
  * @since 2020/3/7
@@ -22,7 +23,7 @@ public class ExchangerTest {
                     String data1 = "123";
                     System.out.println("线程" + Thread.currentThread().getName()
                             + "正把数据:" + data1 + "换出去");
-                    Thread.sleep((long) (Math.random() * 10000));
+                    Thread.sleep((long) (Math.random() * 100));
                     String data2 = (String) exchanger.exchange(data1);
                     System.out.println("线程"+Thread.currentThread().getName()+"换回的数据:"+data2);
                 } catch (Exception e) {
@@ -36,7 +37,7 @@ public class ExchangerTest {
                     String data1 = "abc";
                     System.out.println("线程" + Thread.currentThread().getName()
                             + "正把数据:" + data1 + "换出去");
-                    Thread.sleep((long) (Math.random() * 10000));
+                    Thread.sleep((long) (Math.random() * 100));
                     String data2 = (String) exchanger.exchange(data1);
                     System.out.println("线程"+Thread.currentThread().getName()+"换回的数据:"+data2);
                 } catch (Exception e) {

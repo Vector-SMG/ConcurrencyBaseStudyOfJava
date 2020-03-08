@@ -11,12 +11,12 @@ import java.util.concurrent.locks.ReentrantLock;
  * @version 1.0
  * @since 2020/3/4
  */
-public class TraditionalThreadLockTest {
+public class ThreadLockTest {
 
     Object object = new Object();
 
     public static void main(String[] args) {
-        new TraditionalThreadLockTest().init();
+        new ThreadLockTest().init();
     }
 
     public void init() {
